@@ -26,7 +26,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User')
 
    
-async function result(text){
+async function getresult(text){
    const axios = require('axios')
    result =
    await axios.post('http://gracehopper.cs-i.brandeis.edu:3500/openai',
@@ -53,7 +53,7 @@ router.get("/foodgpt", (req, res) => {
 
 router.post("/foodgpt", async (req, res) => {
    const prompt = "what are the most popular baked goods in " + req.body.prompt + "?";
-   const response = await result(prompt);
+   const response = await getresult(prompt);
    console.log(response);
 
    res.render("foodgpt", { response });
