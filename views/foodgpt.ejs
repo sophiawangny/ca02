@@ -1,0 +1,18 @@
+
+
+
+<head>
+    <title>foodgpt</title>
+  </head>
+  <body>
+    <h1>FoodGPT</h1>
+    <form action="/foodgpt" method="POST">
+      <label for="prompt">enter a place in the world to see the most popular baked goods in that country: </label><br>
+      <input type="text" id="prompt" name="prompt"><br>
+      <input type="submit" value="Summarize">
+    </form>
+    <% if (typeof response !== 'undefined') { %>
+    <h2>Summary:</h2>
+    <p><%= response %></p>
+    <% } %>
+  </body>
